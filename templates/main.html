@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="{{url_for('static', filename='js/main.js')}}"></script>
+    <title>Table</title>
+</head>
+<body>
+    <div>
+        <h1>SPA Table</h1>
+    </div>
+    <div>
+        <h4>If you are entering date please use format day - month - year (example: 27-01-2021)</h4>
+        <h4 id="error" style="color: red;"></h4>
+        <div style="float: left;">
+           <select id="column">
+               <option disabled selected value>Select</option>
+               <option value="title"  selected="selected" >Title</option>
+               <option value="date"  selected="selected" >Date</option>
+               <option value="amount"  selected="selected" >Amount</option>
+               <option value="distance"  selected="selected" >Distance</option>
+           </select>
+       </div>
+        <div style="float: left;">
+           <select id="condition">
+               <option disabled selected value>Select</option>
+               <option value="equal"  selected="selected" >Equal</option>
+               <option value="include"  selected="selected" >Include</option>
+               <option value="more"  selected="selected" >More</option>
+               <option value="less"  selected="selected">Less</option>
+           </select>
+       </div>
+        <div>
+            <input type="text" id="user_input">
+        </div>
+        <div>
+            <input class="button" type="submit" value="Filter" onclick="Filter(event)">
+       </div>
+    </div>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                   <th>Title</th>
+                   <th>Date</th>
+                   <th>Amount</th>
+                   <th>Distance</th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+                {% for item in table_items %}
+                   <tr class="trow">
+                       <td>{{ item.title }}</td>
+                       <td>{{ item.date }}</td>
+                       <td>{{ item.amount }}</td>
+                       <td>{{ item.distance }}</td>
+                   </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+
+</body>
+</html>

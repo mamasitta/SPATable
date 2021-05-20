@@ -1,0 +1,22 @@
+h1 {
+    border: 2px #eee solid;
+    color: gray;
+    text-align: center;
+    padding: 10px;
+}
+td {
+border: 1px solid #E5E5E5;
+padding: 3px;
+}
+
+th {
+border: 1px solid #E5E5E5;
+padding: 3px;
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: left;
+color: gray;
+}
+table{
+width: 50%;
+}
